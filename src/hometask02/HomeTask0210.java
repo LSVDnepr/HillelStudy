@@ -40,26 +40,26 @@ public class HomeTask0210 {
         }
 
         //<VARIANT 2>
-        for (int i = 1; i < rndAr.length; i++) {
+        /*for (int i = 1; i < rndAr.length; i++) {
             if (rndAr[i] != rndAr[i - 1]) continue;
             duplicates[ind] = rndAr[i];
             ind++;
 
             for (i += 1; (i < rndAr.length) && (rndAr[i - 1] == rndAr[i]); i++) ;
-        }
+        }*/
 
         //</VARIANT 2>
 
 
 
         //<VARIANT 3>
-        for (int i = 1; i < rndAr.length; i++) {
+       /* for (int i = 1; i < rndAr.length; i++) {
             if (rndAr[i] != rndAr[i - 1]) continue;
             if (ind == 0 || duplicates[ind-1] != rndAr[i]) {
                 duplicates[ind] = rndAr[i];
                 ind++;
             }
-        }
+        }*/
 
         //</VARIANT 3>
 
