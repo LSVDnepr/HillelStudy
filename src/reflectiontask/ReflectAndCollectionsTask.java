@@ -5,6 +5,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ReflectAndCollectionsTask {
@@ -28,7 +30,6 @@ public class ReflectAndCollectionsTask {
     public static void main(String[] args) throws Exception {
 
         System.out.println("ЗАДАНИЕ 1");
-        /*
         //1. Создать через отражение экземпляр класса HashMap
         Class mapClass = Class.forName("java.util.HashMap");
         //HashMap<Integer, String> reflectMap = (HashMap<Integer, String>) mapClass.getConstructor().newInstance();
@@ -75,7 +76,6 @@ public class ReflectAndCollectionsTask {
         } catch (ClassCastException e) {
             e.printStackTrace();
         }
-*/
 
         System.out.println("ЗАДАНИЕ 2");
         // 2 Вывести на экран все открытые методы и поля класса  ArrayList
@@ -112,7 +112,6 @@ public class ReflectAndCollectionsTask {
 
         UserData ud = new UserData("lana", "root", "root");
         System.out.println(ud);
-        //Class udCl=Class.forName("com.company.myexperiments.reflectiontask.UserData");
         Class udCl = ud.getClass();
         for (Field f : udCl.getDeclaredFields()) {
             if (Modifier.isPublic(f.getModifiers())) {
@@ -149,25 +148,6 @@ public class ReflectAndCollectionsTask {
             if (!Modifier.isPublic(f.getModifiers()))f.setAccessible(true);
             System.out.println(f.getName()+"="+f.get(ud));
         }
-
-
-
-
-
-      //  System.out.println(userFulInfo.invoke(ud));
-
-
-
-       // Class fieldType=udCl.getDeclaredField("login").getType();
-       // Object login;
-       // (fieldType.getClass().)login=udCl.getDeclaredField("login");
-
-        //login.set(login,"admin");
-        //get real field type,
-        //create variable of this type
-
-
-
 
 
     }
