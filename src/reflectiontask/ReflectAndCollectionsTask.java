@@ -19,7 +19,7 @@ public class ReflectAndCollectionsTask {
  1.4. Вывести на экран родительский класс класса HashMap
  1.5. Вывести реализуемые интерфейсы классом HashMap
 2. Вывести на экран все открытые методы и поля класса  ArrayList
- 2.1. Вывести на экран все скрытые данные(поля) класса ArrayList
+ 2.1. Вывести на экран все скрытые данные класса ArrayList
  3. Создать свой класс с приватным полем и публичным.
 	3.1. Динамически изменить значение приватного поля.
 	3.2. Все вывести на экран.(оба типа полей до и после модификации)
@@ -45,16 +45,17 @@ public class ReflectAndCollectionsTask {
         }
 
         //1.1. Добавить несколько элементов одного типа (В смысле String/String??)
-        reflectMap.put(1, "Introduction");
-        reflectMap.put(2, "Arrays");
-        reflectMap.put(3, "Functions, Classes, Packages");
-        reflectMap.put(4, "Nested Classes, Functional Interfaces");
-        reflectMap.put(5, "String, StringBuffer, StringBuilder");
-        reflectMap.put(6, "Exceptions");
-        reflectMap.put(7, "VCS");
-        reflectMap.put(8, "Java Collections");
-        reflectMap.put(9, "Generics");
-        reflectMap.put(10, "Multithreading");
+        Method reflectPut=mapClass.getMethod("put",Object.class,Object.class);
+        reflectPut.invoke(reflectMap,1,"Introduction");
+        reflectPut.invoke(reflectMap,2, "Arrays");
+        reflectPut.invoke(reflectMap,3, "Functions, Classes, Packages");
+        reflectPut.invoke(reflectMap,4, "Nested Classes, Functional Interfaces");
+        reflectPut.invoke(reflectMap,5, "String, StringBuffer, StringBuilder");
+        reflectPut.invoke(reflectMap,6, "Exceptions");
+        reflectPut.invoke(reflectMap,7, "VCS");
+        reflectPut.invoke(reflectMap,8, "Java Collections");
+        reflectPut.invoke(reflectMap,9, "Generics");
+        reflectPut.invoke(reflectMap,10, "Multithreading");
 
         //1.2. Получить элементы и вывести на экран
         for (Map.Entry<Integer, String> entry : reflectMap.entrySet()) {
@@ -87,7 +88,7 @@ public class ReflectAndCollectionsTask {
         }
 
         System.out.println("\nPublic fields of java.util.ArrayList\n***********");
-        for (Field f : arrayListClass.getDeclaredFields()) {
+        for (Field f : arrayListClass.getFields()) {
             System.out.println(Modifier.toString(f.getModifiers()) + " " + f.getType().getSimpleName() + " " + f.getName());
         }
 
@@ -148,7 +149,6 @@ public class ReflectAndCollectionsTask {
             if (!Modifier.isPublic(f.getModifiers()))f.setAccessible(true);
             System.out.println(f.getName()+"="+f.get(ud));
         }
-
 
     }
 
