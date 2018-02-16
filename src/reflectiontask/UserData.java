@@ -35,27 +35,11 @@ public class UserData {
         return nameToShow;
     }
 
-    /*public String getLogin() {
-        return login;
-    }
-
-    public String getPassword() {
-        return password;
-    }*/
 
     public void setNameToShow(String nameToShow) {
         this.nameToShow = nameToShow;
     }
 
-
-
-    /*private void setLogin(String login) {
-        this.login = login;
-    }
-
-    private void setPassword(String password) {
-        this.password = password;
-    }*/
 
     @Override
     public String toString() {
