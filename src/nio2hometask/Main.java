@@ -108,7 +108,7 @@ public class Main {
 
         //скопировать файл
         /*if (!Files.exists(backupFile)) {
-            Files.copy(novelDoc, backupFile);// Заменила этот и подобные if на REPLACE EXISTING
+            Files.copy(novelDoc, backupFile);// Заменила этот и подобные if для backupFile 2,3 на REPLACE EXISTING
             System.out.println("Копирую backupFile1");
         }*/
         /*if (!Files.exists(backupFile2)) {

@@ -49,6 +49,7 @@ public class MyWatchService implements Runnable {
 
                 // WatchKey watchKey = dirToWatch.register(watchService, ENTRY_MODIFY,ENTRY_CREATE,ENTRY_DELETE,OVERFLOW);
                 //while (!shutdown){// Что за shutdown  в примере?? зачем?
+                //как решить с помощью алгоритма из примера в презентации?
 
                 //}
 
